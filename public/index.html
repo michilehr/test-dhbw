@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            .wrapper {
+              display: grid;
+              max-width: 1000px;
+              margin: 0 auto;
+              gap: 20px;
+              grid-template-areas:
+                "header"
+                "nav"
+                "content"
+                "sidebar"
+                "footer";
+              font: 1.2rem Helvetica,arial,sans-serif;
+            }
+
+            .wrapper > * {
+              background-color: lightblue;
+              padding: 10px;
+              border: 1px solid black;
+            }
+
+            @media (width >= 700px) {
+              .wrapper {
+                grid-template-columns: 1fr 3fr;
+                grid-template-areas:
+                  "header  header"
+                  "nav     nav"
+                  "sidebar content"
+                  "footer  footer";
+              }
+              nav ul {
+                display: flex;
+                list-style-type: none;
+              }
+
+              nav ul li {
+                margin: 0 10px;
+              }
+            }
+
+            .main-head {
+              grid-area: header;
+            }
+            .content {
+              grid-area: content;
+            }
+            .main-nav {
+              grid-area: nav;
+            }
+            .side {
+              grid-area: sidebar;
+            }
+            .main-footer {
+              grid-area: footer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+          <header class="main-head">The header</header>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="">Nav 1</a></li>
+              <li><a href="">Nav 2</a></li>
+              <li><a href="">Nav 3</a></li>
+            </ul>
+          </nav>
+          <article class="content">
+            <h1>Main article area</h1>
+             <p>
+              Hey, wanna make your next party totally awesome?
+            </p>
+            <p>
+              Imagine a real-life unicorn showing up to your birthday! They have a swirly, sparkly horn, a rainbow mane, and they love to make new friends.
+            </p>
+            <p>
+              You and your friends can pet them, take pictures with them, and maybe even give them a little treat. It'll be the most magical day ever!
+            </p>
+            <p>
+              Ready to make your party a unicorn adventure?
+            </p>
+          </article>
+          <aside class="side">Sidebar</aside>
+          <footer class="main-footer">The footer</footer>
+        </div>
+    </body>
+</html>
